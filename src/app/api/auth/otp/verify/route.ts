@@ -236,8 +236,16 @@ export async function POST(req: NextRequest) {
     return response;
   } catch (error) {
     console.error("Error in /api/auth/otp/verify:", error);
+    const err = error as Error;
+    const isDbError = err?.message?.includes("ECONNREFUSED") || err?.name === "MongooseServerSelectionError";
+
     return NextResponse.json(
-      { success: false, error: "Internal server error occurred" },
+      {
+        success: false,
+        error: isDbError
+          ? "Cloud database not connected (क्लाउड डेटाबेस जोडलेला नाही). Vercel वर MONGODB_URI (MongoDB Atlas) सेट करा."
+          : "Internal server error occurred",
+      },
       { status: 500 }
     );
   }

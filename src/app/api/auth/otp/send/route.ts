@@ -76,16 +76,26 @@ export async function POST(req: NextRequest) {
     // Send OTP via configured SMS Provider (DevConsole logs to terminal in non-production)
     await getSmsProvider().sendOtp(phone, otp, purpose);
 
+    const showDevOtp = isNonProd || process.env.SMS_PROVIDER === "dev-console" || process.env.SMS_PROVIDER === "mock";
+
     return NextResponse.json({
       success: true,
       message: "OTP sent successfully",
       expiresInSeconds: 600,
-      devOtp: isNonProd ? otp : undefined,
+      devOtp: showDevOtp ? otp : undefined,
     });
   } catch (error) {
     console.error("Error in /api/auth/otp/send:", error);
+    const err = error as Error;
+    const isDbError = err?.message?.includes("ECONNREFUSED") || err?.name === "MongooseServerSelectionError";
+
     return NextResponse.json(
-      { success: false, error: "Internal server error occurred" },
+      {
+        success: false,
+        error: isDbError
+          ? "Cloud database not connected (क्लाउड डेटाबेस जोडलेला नाही). Vercel वर MONGODB_URI (MongoDB Atlas) सेट करा."
+          : "Internal server error occurred",
+      },
       { status: 500 }
     );
   }
