@@ -1,0 +1,78 @@
+{
+  "brand": {
+    "name": "TruckTrust",
+    "tagline": "Maharashtra's Verified Rural Freight Network",
+    "subtagline": "Direct verified truck drivers for rural farmers, SHGs, and local entrepreneurs"
+  },
+  "common": {
+    "loading": "Please wait...",
+    "submit": "Continue",
+    "cancel": "Cancel",
+    "back": "Back",
+    "save": "Save",
+    "retry": "Try Again",
+    "success": "Success",
+    "error": "Something went wrong",
+    "viewDetails": "View Details",
+    "share": "Share",
+    "call": "Call",
+    "verified": "Verified",
+    "status": "Status",
+    "date": "Date",
+    "amount": "Amount",
+    "phone": "Phone Number",
+    "enterPhone": "Enter 10-digit mobile number",
+    "otp": "OTP",
+    "enterOtp": "Enter 6-digit OTP",
+    "resendOtp": "Resend OTP",
+    "resendIn": "Resend in {seconds}s",
+    "currencySymbol": "₹"
+  },
+  "roles": {
+    "entrepreneur": "Entrepreneur / Farmer / Trader",
+    "entrepreneurDesc": "I need to ship produce, dairy, or merchandise",
+    "driver": "Truck Owner / Driver",
+    "driverDesc": "I have a truck and want reliable freight loads",
+    "admin": "Platform Administrator",
+    "support": "Support Agent",
+    "truckMitra": "Truck Mitra (Village Agent)"
+  },
+  "auth": {
+    "loginTitle": "Login or Register",
+    "loginSubtitle": "We will send a secure verification OTP to your phone",
+    "roleSelectionTitle": "Who are you?",
+    "roleSelectionSubtitle": "Select your primary role to get started",
+    "otpSentMessage": "OTP has been sent to {phone}",
+    "verifyAndContinue": "Verify OTP & Continue",
+    "termsConsent": "By continuing, you agree to our Terms of Service & Privacy Policy",
+    "invalidPhone": "Please enter a valid 10-digit Indian mobile number",
+    "invalidOtp": "Invalid or expired OTP code",
+    "tooManyAttempts": "Too many attempts. Please try again after 5 minutes",
+    "logout": "Log Out",
+    "adminLogin": "Admin Login (via Email)"
+  },
+  "districts": {
+    "palghar": "Palghar (Dahanu, Jawhar, Wada, Vikramgad)",
+    "nashik": "Nashik (Sinnar, Niphad, Malegaon)",
+    "pune": "Pune (Junnar, Shirur, Baramati)",
+    "thane": "Thane (Bhiwandi, Kalyan, Murbad)",
+    "raigad": "Raigad (Panvel, Pen, Roha)",
+    "kolhapur": "Kolhapur (Shirol, Hatkanangale)"
+  },
+  "truckTypes": {
+    "tata_ace": "Tata Ace / Chhota Hathi (750 kg)",
+    "pickup": "Pickup / Bolero Maxi (1.5 ton)",
+    "truck_14ft": "14-ft Truck (4 ton)",
+    "truck_17ft": "17-ft Truck (6 ton)",
+    "truck_20ft": "20-ft Truck (9 ton)",
+    "truck_32ft": "32-ft Container (15+ ton)"
+  },
+  "payments": {
+    "advance50": "50% Advance Payment",
+    "delivery50": "50% Due on Delivery",
+    "escrowProtected": "Trust Escrow Protected",
+    "escrowDesc": "Remaining funds released to driver only upon receiver OTP and delivery confirmation",
+    "driverWallet": "Driver Wallet",
+    "instantPayout": "Instant Bank / UPI Transfer"
+  }
+}

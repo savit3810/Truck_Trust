@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trucktrust-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/trucktrust
+      - BRAND_NAME=TruckTrust
+      - NEXT_PUBLIC_BRAND_NAME=TruckTrust
+      - JWT_SECRET=change_this_to_a_secure_random_hex_secret_in_production
+      - RAZORPAY_KEY_ID=rzp_test_placeholder
+      - RAZORPAY_KEY_SECRET=rzp_secret_placeholder
+      - RAZORPAY_WEBHOOK_SECRET=rzp_webhook_secret_placeholder
+      - NEXT_PUBLIC_MAP_PROVIDER=osrm
+      - SMS_PROVIDER=mock
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - trucktrust-net
+
+  mongo:
+    image: mongo:7.0-jammy
+    container_name: trucktrust-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - trucktrust-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  mongo-data:
+    driver: local
+
+networks:
+  trucktrust-net:
+    driver: bridge

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="100" fill="#0A3331"/>
+  <!-- Truck body -->
+  <rect x="90" y="200" width="220" height="150" rx="12" fill="#E28B14"/>
+  <path d="M310 230 L370 230 L410 280 L410 350 L310 350 Z" fill="#E28B14"/>
+  <!-- Windshield -->
+  <path d="M320 245 L365 245 L395 285 L320 285 Z" fill="#FFFFFF" opacity="0.9"/>
+  <!-- Cargo slats -->
+  <line x1="120" y1="230" x2="120" y2="320" stroke="#0A3331" stroke-width="8" stroke-linecap="round"/>
+  <line x1="170" y1="230" x2="170" y2="320" stroke="#0A3331" stroke-width="8" stroke-linecap="round"/>
+  <line x1="220" y1="230" x2="220" y2="320" stroke="#0A3331" stroke-width="8" stroke-linecap="round"/>
+  <line x1="270" y1="230" x2="270" y2="320" stroke="#0A3331" stroke-width="8" stroke-linecap="round"/>
+  <!-- Wheels -->
+  <circle cx="160" cy="365" r="45" fill="#1C1B1F"/>
+  <circle cx="160" cy="365" r="20" fill="#F4EEDC"/>
+  <circle cx="360" cy="365" r="45" fill="#1C1B1F"/>
+  <circle cx="360" cy="365" r="20" fill="#F4EEDC"/>
+  <!-- Front bumper & headlight -->
+  <rect x="405" y="325" width="20" height="20" rx="4" fill="#F5C77A"/>
+  <!-- Brand monogram / text indicator -->
+  <text x="256" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="44" fill="#F4EEDC" letter-spacing="2">TRUCKTRUST</text>
+</svg>
