@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getRoutingProvider } from "@/lib/providers/routing";
 
-export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   try {
